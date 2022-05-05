@@ -53,4 +53,11 @@ public class HelloRestController {
         return "Hello " + userInfo.getFirstName() +" "+userInfo.getLastName() + " Welcome To BridgeLabz";
 
     }
+    /**@PostMapping: mapping HTTP POST requests onto specific handler methods Use POST Request Method and pass first name and last name in the Body;
+     * @CURL: http://localhost:8080/hello/put/Suraj?lastName=Chaudhary
+     * @O/P: Hello Suraj Chaudhary Welcome To BridgeLabz
+     */
+    @PutMapping("/hello/put/{firstName}")
+    public String sayHello(@PathVariable String firstName, @RequestParam (value = "lastName") String lastName){
+        return "Hello " + firstName + " " + lastName + " Welcome to BridgeLabz";
 }
